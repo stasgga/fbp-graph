@@ -1,0 +1,3 @@
+'6' -> MULTIPLICAND Multiply(Multiply)
+'71' -> MULTIPLIER Multiply
+Multiply PRODUCT -> IN Display(Output)

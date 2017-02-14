@@ -1,0 +1,72 @@
+{
+  "properties": {
+    "name": "John"
+  },
+  "processes": {
+    "Read": {
+      "component": "ReadFile",
+      "metadata": {}
+    },
+    "Split": {
+      "component": "SplitStr",
+      "metadata": {}
+    },
+    "Count": {
+      "component": "Counter",
+      "metadata": {}
+    },
+    "Display": {
+      "component": "Output",
+      "metadata": {}
+    }
+  },
+  "connections": [
+    {
+      "data": "somefile.txt",
+      "tgt": {
+        "process": "Read",
+        "port": "SOURCE"
+      }
+    },
+    {
+      "src": {
+        "process": "Read",
+        "port": "OUT"
+      },
+      "tgt": {
+        "process": "Split",
+        "port": "IN"
+      }
+    },
+    {
+      "src": {
+        "process": "Split",
+        "port": "OUT"
+      },
+      "tgt": {
+        "process": "Count",
+        "port": "IN"
+      }
+    },
+    {
+      "src": {
+        "process": "Count",
+        "port": "COUNT"
+      },
+      "tgt": {
+        "process": "Display",
+        "port": "IN"
+      }
+    },
+    {
+      "src": {
+        "process": "Read",
+        "port": "ERROR"
+      },
+      "tgt": {
+        "process": "Display",
+        "port": "IN"
+      }
+    }
+  ]
+}

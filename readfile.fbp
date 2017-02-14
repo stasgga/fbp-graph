@@ -1,0 +1,5 @@
+# In the graph we first need to define the nodes and the connections between them
+Read(ReadFile) OUT -> IN Display(Output)
+
+# Start off the graph by sending a filename to the file reader
+'package.json' -> IN Read

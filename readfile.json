@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "name": "MyDiagram"
+  },
+  "processes": {
+    "Read": {
+      "component": "ReadFile",
+      "metadata": {}
+    },
+    "Display": {
+      "component": "Output",
+      "metadata": {}
+    }
+  },
+  "connections": [
+    {
+      "src": {
+        "process": "Read",
+        "port": "OUT"
+      },
+      "tgt": {
+        "process": "Display",
+        "port": "IN"
+      }
+    },
+    {
+      "data": "package.json",
+      "tgt": {
+        "process": "Read",
+        "port": "IN"
+      }
+    }
+  ]
+}

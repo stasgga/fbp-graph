@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "name": "MyDiagram"
+  },
+  "processes": {
+    "Multiply": {
+      "component": "Multiply",
+      "metadata": {}
+    },
+    "Display": {
+      "component": "Output",
+      "metadata": {}
+    }
+  },
+  "connections": [
+    {
+      "data": "6",
+      "tgt": {
+        "process": "Multiply",
+        "port": "MULTIPLICAND"
+      }
+    },
+    {
+      "data": "71",
+      "tgt": {
+        "process": "Multiply",
+        "port": "MULTIPLIER"
+      }
+    },
+    {
+      "src": {
+        "process": "Multiply",
+        "port": "PRODUCT"
+      },
+      "tgt": {
+        "process": "Display",
+        "port": "IN"
+      }
+    }
+  ]
+}
